@@ -38,6 +38,7 @@ function App() {
       <Card channel="mdsiaofficial" age={age} array={arr} obj={myobj} btnText="Click Me"></Card>
 
       <BgChanger></BgChanger>
+      <BgChanger></BgChanger>
     </>
   )
 }
