@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Ashiq from './Ashiq'
 import Card from './Comps/Card'
+import BgChanger from './Comps/BgChanger'
 
 function Chess() {
   return (
@@ -35,6 +36,8 @@ function App() {
       <Chess></Chess>
       <Card></Card>
       <Card channel="mdsiaofficial" age={age} array={arr} obj={myobj} btnText="Click Me"></Card>
+
+      <BgChanger></BgChanger>
     </>
   )
 }
