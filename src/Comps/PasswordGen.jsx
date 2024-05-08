@@ -27,8 +27,11 @@ export default function PasswordGen(){
 
   }, [len, numAllow, charAllow, setPassword]);
   
+
   const copyPassToClip = useCallback( () => {
-    window.navigator.clipboard.writeText(passRef.current.value);
+    passRef.current?.select();
+    passRef.current?.setSelectionRange(0,12);
+    window.navigator.clipboard.writeText(password);
   }, [password]);
 
   useEffect(()=>{
@@ -40,6 +43,7 @@ export default function PasswordGen(){
     <div>
       <h1 className="text-center text-4xl font-bold">Password Generator</h1>
       <div className="bg-olive-500 w-full max-w-md md-auto shadow-md rounded-lg px-4 my-8 text-orange-500">
+        
         <div className="flex shadow-2xl rounded-lg overflow-hidden mb-4">
           <input type="text" 
           value={password} 
@@ -87,7 +91,7 @@ export default function PasswordGen(){
           <input type="text"
           className="outline-none w-full py-1 px-3"
           placeholder="Password"
-          ref={passRef}/>
+          />
         </div>  
 
       </div>
