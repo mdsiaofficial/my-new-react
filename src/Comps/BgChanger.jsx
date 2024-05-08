@@ -6,9 +6,9 @@ function BgChanger() {
   
   return (
     <>
-      <div style={{backgroundColor: color}} className="w-128 h-64 duration-200">
+      <div style={{backgroundColor: color}} className="m-4 w-128 h-64 duration-200">
         <div className=" flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
-          <div className="flex flex-wrap-justify-center gap-3 shadow-lg bg-white px-3 py-2 rounded-lg">
+          <div className="flex flex-wrap-justify-center m-2 gap-3 shadow-lg bg-white px-3 py-2 rounded-lg">
 
             <button onClick={() => setColor("red")} className="w-36 outline-none px-1 py-1 rounded-md" style={{ backgroundColor: "red" }}>Red</button>
             

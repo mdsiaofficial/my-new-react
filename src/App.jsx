@@ -5,6 +5,7 @@ import './App.css'
 import Ashiq from './Ashiq'
 import Card from './Comps/Card'
 import BgChanger from './Comps/BgChanger'
+import PasswordGen from './Comps/PasswordGen'
 
 function Chess() {
   return (
@@ -39,6 +40,9 @@ function App() {
 
       <BgChanger></BgChanger>
       <BgChanger></BgChanger>
+
+      {/* Password Gen here */}
+      <PasswordGen></PasswordGen>
     </>
   )
 }
