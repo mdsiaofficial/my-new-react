@@ -26,11 +26,14 @@ export default function PasswordGen(){
     }setPassword(pass);
 
   }, [len, numAllow, charAllow, setPassword]);
+  
+  const copyPassToClip = useCallback( () => {
+    window.navigator.clipboard.writeText(passRef.current.value);
+  }, [password]);
 
   useEffect(()=>{
     passGen();
   }, [len, numAllow, charAllow, passGen]);
-
 
   
   return (
@@ -42,8 +45,9 @@ export default function PasswordGen(){
           value={password} 
           className="outline-none w-full py-1 px-3"
           placeholder="Password"
-          readOnly/>
-          <button className="bg-orange-500 text-white px-3 py-1">Copy</button>
+          readOnly
+          ref={passRef}/>
+          <button onClick={copyPassToClip} className="bg-orange-500 text-white px-3 py-1">Copy</button>
         </div>  
 
         <div className="flex text-sm-gap-x">
@@ -79,7 +83,12 @@ export default function PasswordGen(){
           <label htmlFor="">  Character</label>
         </div>
 
-
+        <div className="flex shadow-2xl rounded-lg overflow-hidden mb-4">
+          <input type="text"
+          className="outline-none w-full py-1 px-3"
+          placeholder="Password"
+          ref={passRef}/>
+        </div>  
 
       </div>
     </div>
