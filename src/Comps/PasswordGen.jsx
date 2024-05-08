@@ -1,9 +1,12 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useRef } from "react"
 
 export default function PasswordGen(){
   const [len, setLen] = useState(8);
   const [numAllow, setNumAllow] = useState(false);
   const [charAllow, setCharAllow] = useState(false);
+
+  // useRef Hook
+  const passRef = useRef(null);
 
   // const [specialAllow, setSpecialAllow] = useState(false);
   // const [lowerAllow, setLowerAllow] = useState(false);
