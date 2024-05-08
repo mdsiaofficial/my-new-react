@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect, useRef } from "react"
 
 export default function PasswordGen(){
   const [len, setLen] = useState(8);
@@ -10,6 +10,7 @@ export default function PasswordGen(){
   // const [upperAllow, setUpperAllow] = useState(false);
   // const [symbolAllow, setSymbolAllow] = useState(false);
   const [password, setPassword] = useState("");
+
   const passGen = useCallback(()=>{
     let pass = "";
     let passStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
@@ -23,6 +24,12 @@ export default function PasswordGen(){
 
   }, [len, numAllow, charAllow, setPassword]);
 
+  useEffect(()=>{
+    passGen();
+  }, [len, numAllow, charAllow, passGen]);
+
+
+  
   return (
     <div>
       <h1 className="text-center text-4xl font-bold">Password Generator</h1>
@@ -60,9 +67,9 @@ export default function PasswordGen(){
         <div className="flex text-sm-gap-x">
           <input type="checkbox"
           defaultChecked={charAllow}
-          id="numInput"
+          id="charInput"
           onChange={()=>{
-            setNumAllow(!charAllow);
+            setCharAllow(!charAllow);
             
           }}
           />
