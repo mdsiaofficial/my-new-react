@@ -6,7 +6,7 @@ import Ashiq from './Ashiq'
 import Card from './Comps/Card'
 import BgChanger from './Comps/BgChanger'
 import PasswordGen from './Comps/PasswordGen'
-
+import CurrencyConvert from './Comps/CurrencyConvert'
 function Chess() {
   return (
     <div>
@@ -43,6 +43,13 @@ function App() {
 
       {/* Password Gen here */}
       <PasswordGen></PasswordGen>
+
+      {/* Currency Convert here */}
+      <CurrencyConvert/>
+      {/* <BgChanger/> */}
+
+
+
     </>
   )
 }
