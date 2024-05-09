@@ -7,6 +7,7 @@ import Card from './Comps/Card'
 import BgChanger from './Comps/BgChanger'
 import PasswordGen from './Comps/PasswordGen'
 import CurrencyConvert from './Comps/CurrencyConvert'
+
 function Chess() {
   return (
     <div>

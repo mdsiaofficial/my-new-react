@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useId } from "react";
 
 export default function InputBox({
   label,
@@ -10,13 +10,15 @@ export default function InputBox({
   currencyDisable = false,
   className = "", }) {
 
+  
+  const amountInputID = useId();
 
   return (
     <div className={` p-3 rounded-lg text-sm flex ${className}`}>
       <div className="w-1/2">
-        <label htmlFor="" className="mb-2 inline-block">{label}</label>
+        <label htmlFor="{amountInputID}" className="mb-2 inline-block">{label}</label>
 
-        <input className="outline-none w-full bg-transparent border rounded-lg text-center text-xl py-1.5"
+        <input id="amountInputID" className="outline-none w-full bg-transparent border rounded-lg text-center text-xl py-1.5"
         type="number" 
         placeholder="Amount" 
         disabled={amountDisable} 
